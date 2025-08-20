@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pacotes Mensais de Posts | Social Media & Design</title>
+  <meta name="description" content="Apresentação clara dos pacotes mensais de posts para Instagram: básico, intermediário e premium, com benefícios, dúvidas frequentes e chamada para contato.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Paleta solicitada */
+      --cream:#f7f2e8;         /* creme */
+      --ink:#1f2933;           /* cinza escuro */
+      --gold:#e9bb24;          /* dourado */
+      --purple:#6f42c1;        /* roxo */
+      --orange:#e86b2a;        /* laranja */
+      --moss:#556b2f;          /* verde musgo */
+      --muted:#6b7280;         /* cinza secundário */
+      --card:#ffffff;          /* branco cartão */
+      --ring: rgba(0,0,0,.08);
+      --radius:20px;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--ink); background:linear-gradient(180deg, var(--cream), #fff)}
+    a{color:inherit}
+
+    /* Layout */
+    .container{max-width:1120px; margin:0 auto; padding:0 20px}
+    header.nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(120%) blur(8px); background:linear-gradient(180deg, #fff8, #fff0); border-bottom:1px solid #eee}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .logo{width:36px; height:36px; border-radius:10px; background:conic-gradient(from 180deg, var(--gold), var(--purple), var(--orange), var(--moss)); box-shadow:0 3px 10px #00000014}
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:#fff; border:1px solid var(--ring); box-shadow:var(--shadow)}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; border-radius:14px; border:1px solid #e5e7eb; background:#fff; font-weight:700; cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .btn.primary{background:linear-gradient(135deg, var(--gold), #e8c96a); color:#1a1a1a; border-color:transparent}
+    .btn.ghost{background:#fff}
+
+    /* Hero */
+    .hero{padding:60px 0 40px}
+    .hero-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:24px}
+    @media(max-width:900px){ .hero-grid{grid-template-columns:1fr} }
+    .badge{display:inline-flex; gap:8px; align-items:center; padding:8px 12px; border-radius:999px; background:#fff; border:1px solid var(--ring)}
+    h1{font-size:clamp(28px, 5vw, 56px); line-height:1.05; margin:10px 0}
+    .lead{font-size:clamp(15px, 1.6vw, 18px); color:var(--muted)}
+    .hero-card{background:var(--card); border:1px solid #eee; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+
+    /* Cards dos pacotes */
+    .pricing{padding:24px 0 12px}
+    .grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
+    @media(max-width:900px){ .grid{grid-template-columns:1fr} }
+    .card{background:#fff; border:1px solid #ededed; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .card h3{font-size:clamp(20px,2.2vw,26px); margin:8px 0 4px}
+    .chip{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid var(--ring); background:#fff}
+    .price{font-weight:800; font-size:clamp(22px, 2.6vw, 28px); margin:12px 0}
+    .note{font-size:12px; color:var(--muted)}
+    ul.features{list-style:none; padding:0; margin:12px 0 0; display:grid; gap:10px}
+    .features li{display:flex; gap:10px; align-items:flex-start}
+    .dot{width:10px; height:10px; border-radius:999px; margin-top:6px; background:linear-gradient(135deg, var(--gold), var(--orange))}
+
+    .accent-gold{outline:2px solid #f2e2b2; box-shadow:0 12px 40px #c59d3420}
+    .accent-purple{outline:2px solid #e0d4f8; box-shadow:0 12px 40px #6f42c120}
+    .accent-moss{outline:2px solid #dbe5c9; box-shadow:0 12px 40px #556b2f20}
+
+    /* Seção benefícios */
+    .benefits{padding:40px 0}
+    .benefit{display:flex; gap:14px; align-items:flex-start}
+    .ico{width:40px; height:40px; border-radius:12px; display:grid; place-items:center; color:#fff}
+    .ico.gold{background:linear-gradient(135deg, var(--gold), #f4d36a)}
+    .ico.purple{background:linear-gradient(135deg, var(--purple), #a78bfa)}
+    .ico.moss{background:linear-gradient(135deg, var(--moss), #8bb574)}
+
+    /* FAQ */
+    .faq{padding:30px 0 60px}
+    details{background:#fff; border:1px solid #eee; border-radius:14px; padding:14px 16px; box-shadow:var(--shadow)}
+    details+details{margin-top:10px}
+    summary{cursor:pointer; font-weight:700}
+
+    /* Footer */
+    footer{padding:24px 0 40px; border-top:1px solid #eee; color:var(--muted)}
+    .cta-row{display:flex; flex-wrap:wrap; gap:10px}
+
+    /* Sticky CTA */
+    .sticky-cta{position:fixed; right:18px; bottom:18px; z-index:60 }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="font-size:14px; letter-spacing:.12em; color:var(--muted); text-transform:uppercase">Raiany Anjos</div>
+          <div style="font-size:18px">Pacotes Mensais</div>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="pill" href="#pacotes" aria-label="Ver pacotes">Ver pacotes</a>
+        <a class="btn primary" href="#contato">Falar no WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Clareza • Consistência • Conversão</span>
+          <h1>Pacotes mensais de posts para <span style="color:var(--orange)">crescer seu perfil</span> com design estratégico</h1>
+          <p class="lead">Feitos para negócios locais como cafeterias, padarias, restaurantes e barbearias. Visual profissional, voz da marca definida e calendário organizado — sem dor de cabeça.</p>
+          <div class="cta-row" style="margin-top:14px">
+            <a class="btn primary" href="#pacotes">Conhecer planos</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div style="font-weight:800; font-size:18px; margin-bottom:8px">Como funciona</div>
+          <ul class="features">
+            <li><span class="dot"></span><span>Briefing rápido para entender objetivos e público.</span></li>
+            <li><span class="dot"></span><span>Criação de artes com identidade visual consistente.</span></li>
+            <li><span class="dot"></span><span>Entrega semanal e ajustes pontuais.</span></li><br>
+                      <div style="font-weight:800; font-size:18px; margin-bottom:8px">Por que Investir?</div>
+                       <ul class="features">
+            <li><span class="dot"></span><span>Mais Profissionalismo.</span></li>
+            <li><span class="dot"></span><span>Mais Confiança e Credibilidade.</span></li>
+            <li><span class="dot"></span><span>Comunicação Clara e Bonita.</span></li>
+
+            <li><span class="dot"></span><span>Clientes Certos para sua Marca.</span></li><br>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACOTES -->
+    <section id="pacotes" class="pricing">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:end; gap:10px; flex-wrap:wrap; margin-bottom:10px">
+          <h2 style="margin:0; font-size:clamp(22px,3vw,34px)">Escolha o plano ideal</h2>
+        </div>
+        <div class="grid">
+
+
+          <!-- Básico -->
+          <article class="card accent-gold" aria-label="Pacote Básico">
+            <div class="chip">Básico</div>
+            <h3>Presença consistente</h3>
+            <div class="price">R$ 180/ mês</div>
+            <ul class="features">
+              <li><span class="dot"></span><span>8 artes/mês (2 por semana)</span></li>
+              <li><span class="dot"></span><span>Textos/legendas base e hashtags</span></li>
+              <li><span class="dot"></span><span>1 rodada de ajustes por arte</span></li>
+              <li><span class="dot"></span><span>Arquivos prontos para Instagram</span></li>
+            </ul>
+            <p class="note">Indicado para quem está começando e quer manter o feed ativo.</p>
+            <div class="cta-row" style="margin-top:12px"><a class="btn" href="#contato">Quero este</a></div>
+          </article>
+
+          <!-- Intermediário -->
+          <article class="card accent-purple" aria-label="Pacote Intermediário">
+            <div class="chip">Intermediário</div>
+            <h3>Crescimento e variedade</h3>
+            <div class="price">R$ 250 / mês</div>
+            <ul class="features">
+              <li><span class="dot"></span><span>12 artes/mês (3 por semana)</span></li>
+              <li><span class="dot"></span><span>Stories (até 4/mês)</span></li>
+              <li><span class="dot"></span><span>Legenda otimizada + CTAs</span></li>
+              <li><span class="dot"></span><span>2 rodadas de ajustes por arte</span></li>
+            </ul>
+            <p class="note">Para marcas que desejam mais ritmo e testes criativos.</p>
+            <div class="cta-row" style="margin-top:12px"><a class="btn" href="#contato">Quero este</a></div>
+          </article>
+
+          <!-- Premium -->
+          <article class="card accent-moss" aria-label="Pacote Premium">
+            <div class="chip">Premium</div>
+            <h3>Estratégia completa</h3>
+            <div class="price">R$ 350 / mês</div>
+            <ul class="features">
+              <li><span class="dot"></span><span>16 artes/mês (4 por semana)</span></li>
+              <li><span class="dot"></span><span>Carrosséis estratégicos (até 2/mês)</span></li>
+              <li><span class="dot"></span><span>Stories (até 8/mês)</span></li>
+            </ul>
+            <p class="note">Para resultado consistente e visual alinhado à identidade.</p>
+            <div class="cta-row" style="margin-top:12px"><a class="btn" href="#contato">Quero este</a></div>
+          </article>
+
+          <!-- Avulso -->
+          <article class="card accent-gold" aria-label="Posts Avulsos">
+            <div class="chip">Avulso</div>
+            <h3>Serviços Avulsos</h3>
+            <div class="price">R$ 30 Por Post</div>
+            <ul class="features">
+              <li><span class="dot"></span><span>Textos/legendas base e hashtags</span></li>
+              <li><span class="dot"></span><span>1 rodada de ajustes </span></li>
+            </ul>
+            <p class="note">Indicado para quem ainda não quer contratar um pacote mensal, mas precisa de um post pontual para divulgar uma promoção, novidade ou evento.</p>
+            <div class="cta-row" style="margin-top:12px"><a class="btn" href="#contato">Quero este</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits">
+      <div class="container grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="card benefit">
+          <div class="ico gold">⚡</div>
+          <div>
+            <h4 style="margin:0">Agilidade com qualidade</h4>
+            <p class="lead" style="margin:6px 0 0">Fluxo semanal de entregas para manter o perfil ativo sem perder o padrão.</p>
+          </div>
+        </div>
+        <div class="card benefit">
+          <div class="ico purple">🎯</div>
+          <div>
+            <h4 style="margin:0">Foco em conversão</h4>
+            <p class="lead" style="margin:6px 0 0">Design + copy pensados para atrair clientes e destacar ofertas.</p>
+          </div>
+        </div>
+        <div class="card benefit">
+          <div class="ico moss">🧩</div>
+          <div>
+            <h4 style="margin:0">Identidade consistente</h4>
+            <p class="lead" style="margin:6px 0 0">Cores, fontes e estilo alinhados com a personalidade da sua marca.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <div class="container" style="max-width:860px">
+        <h2 style="margin:0 0 12px; font-size:clamp(22px,3vw,32px)">Dúvidas frequentes</h2>
+        <details>
+          <summary>Como funciona o pagamento?</summary>
+          <p>Pagamento mensal antecipado via PIX. Emissão de recibo simples. Contratos a partir de 1 mês com possibilidade de renovação.</p>
+        </details>
+        <details>
+          <summary>O que eu preciso te enviar?</summary>
+          <p>Logo/cores (se tiver), fotos dos produtos/serviços e informações sobre promoções, horários e endereço. Se não tiver fotos, posso usar banco de imagens gratuito como apoio.</p>
+        </details>
+        <details>
+          <summary>Posso trocar itens do pacote?</summary>
+          <p>Sim. Os pacotes são base e podem ser ajustados (ex.: trocar stories por carrossel). Valores podem variar conforme a mudança.</p>
+        </details>
+        <details>
+          <summary>Faço posts todos os dias?</summary>
+          <p>Não é necessário. O foco é consistência e qualidade. A recomendação vai de 2 a 4 posts por semana, de acordo com o plano.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" style="padding:20px 0 60px">
+      <div class="container card" style="display:grid; gap:14px">
+        <h2 style="margin:0">Vamos conversar?</h2>
+        <p class="lead" style="margin:0">Me chame no WhatsApp e receba uma prévia sem compromisso.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://wa.me/5516997470186" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          <a class="btn" href="#" onclick="window.print()">Exportar em PDF</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+      <div>© <span id="year"></span> • Pacotes Mensais de Posts • Raiany Anjos •</div>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta">
+    <a class="btn primary" href="https://wa.me/5516997470186" target="_blank" rel="noopener">Falar no WhatsApp</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
